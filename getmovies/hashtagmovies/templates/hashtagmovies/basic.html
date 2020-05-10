@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block head %} {% endblock %}
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+      <style>
+
+.navbar-brand {
+font-style: italic;
+  font-family: Sofia;
+font-weight: bold;
+font-size:52px;
+}
+
+.card{
+  margin: 5% 0%;
+}
+
+
+body {
+    font-family: Sofia;
+    color: #fff;
+}
+
+.card-body{
+  margin: 0% 0% 0% 3%;
+  padding: 6% 0%;
+}
+
+
+
+
+
+html, body {
+    height: 100%;
+    background-color: #333;
+
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+        {% block css %}  {% endblock %}
+
+    </style>
+    <title>{% block title %}  {% endblock %}</title>
+  </head>
+  <body>
+  <div>
+
+  <div class="container">
+      <nav class="navbar navbar-dark m-3" style="background-color: #333;">
+  <a class="navbar-brand" href="/" style="color:#cccccc">
+<!--    <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
+      HashtagMovies.com
+  </a>
+</nav>
+  </div>
+
+<hr class="featurette-divider" style="background-color: #8b0000;">
+           <div class="container">
+    <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted"  href="/contact"><b>CONTACT US</b></a>
+        <a class="p-2 text-muted"  href="/about"><b>ABOUT US</b></a>
+    </nav>
+  </div>
+</div>
+      <hr class="featurette-divider" style="background-color: #8b0000;">
+
+      <div class="container">
+    <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted"  href="/romance"><b>ROMANCE</b></a>
+        <a class="p-2 text-muted"  href="/biopic"><b>BIOPIC</b></a>
+        <a class="p-2 text-muted"  href="/action"><b>ACTION</b></a>
+        <a class="p-2 text-muted"  href="/family"><b>FAMILY</b></a>
+        <a class="p-2 text-muted"  href="/thriller"><b>THRILLER</b></a>
+        <a class="p-2 text-muted" href="/sci-fi"><b>SCI-FI</b></a>
+        <a class="p-2 text-muted" href="/adventure"><b>ADVENTURE</b></a>
+        <a class="p-2 text-muted" href="/animation"><b>ANIMATION</b></a>
+    </nav>
+  </div>
+</div>
+
+<hr class="featurette-divider" style="background-color: #8b0000;">
+
+<hr class="featurette-divider" style="background-color: #8b0000;">
+
+      {% block search %}    {% endblock %}
+
+<hr class="featurette-divider" style="background-color: #8b0000;">
+
+</div>
+
+
+
+
+  {%  block body %} {% endblock %}
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <large >Copyright &copy; hashtagmovies.com</large>
+    </div>
+  </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

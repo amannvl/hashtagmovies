@@ -1,0 +1,81 @@
+{% extends 'hashtagmovies/basic.html' %}
+{% block title %} Search {% endblock %}
+{% block head %}  {% endblock %}
+{% block css %}
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: Sofia;
+        background: #cccccc;
+    padding:30px;
+}
+body {
+    font-family: Sofia;
+    color: #444444;
+}
+.container {
+    text-align: center;
+}
+.card-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: #ffcf88;
+<!--    bottom: 0;-->
+ align-item: center;
+    left: calc(50% - 40px);
+}
+
+  {% endblock %}
+
+{% block search %}
+<div class="container">
+          <nav class="navbar navbar-dark py-1 mb-2" style="background-color: #333;">
+              <a class="navbar-brand"><h3>Search Over Million</h3></a>
+  <form method="get" action="/search" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" id="query" name="query" aria-label="Search">
+    <button class="btn btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+      </div>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<section xmlns="http://www.w3.org/1999/html">
+          <div class="section-title">
+          <h2>{{cat}} MOVIES</h2>
+        </div>
+</section>
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-4">
+    {% for i in catPosts %}
+  <div class="col mb-2" >
+    <div class="card-deck">
+    <div class="card mb-2 " style="background: #cccccc;">
+        {% if i.full_size_cover_url %}
+    <a href="{{i.full_size_cover_url}}"><img class="card-img-top" height="350px" src='{{i.full_size_cover_url}}' alt="{{ i.title }}"></a>
+        {% else %}
+            <a href="{{i.cover_url}}"><img class="card-img-top" height="350px" src='{{i.cover_url}}' alt="{{ i.title }}"></a>
+        {% endif %}
+      <div class="card-body">
+          <a href="/moviepost/{{i.movie_id}}" style="color:#444444">
+        <h5 class="card-title">{{ i.title }}</h5>
+          </a>
+        <p class="card-text">{{ i.genres }}<br></p>
+      </div>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'hashtagmovies/basic.html' %}
+
+{% block title%} About Us{% endblock %}
+{% block search %}
+<div class="container">
+          <nav class="navbar navbar-dark py-1 mb-2" style="background-color: #333;">
+              <a class="navbar-brand"><h3>Search Over Million</h3></a>
+  <form method="get" action="/search" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" id="query" name="query" aria-label="Search">
+    <button class="btn btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+      </div>
+{% endblock %}
+{% block body %}
+
+
+
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron"  style="background:#cccccc;color:#444444;">
+    <div class="container">
+      <h1 class="display-3">About Hashtagmovies.com</h1>
+      <p>HashtagMovies.com score are the world’s most trusted recommendation resources for quality entertainment. As the leading online aggregator of movie and TV show reviews from critics, we provide fans with a comprehensive guide to what’s Fresh – and what’s Rotten – in theaters and at home. And the Tomatometer is just the beginning. We also serve movie and TV fans with original editorial content on our site and through social channels, produce fun and informative video series, and hold live events for fans across the country, with our ‘Your Opinion Sucks’ live shows. If you’re an entertainment fan looking for a recommendation, or to share an opinion, you’ve come to the right place</p>
+    </div>
+  </div>
+
+  <div class="jumbotron" style="background:#cccccc;color:#444444;">
+    <div class="container">
+      <h1 class="display-3">How To Search</h1>
+      <p>Here you can search movies from all around the world regardless of what language movie you want to search.We basically gives you alot of genre options.If you could not find your movie in searched section then you may also search in advance search option and that'll give you a more precise result view.
+
+      Okay! so explore the world of Hashtagmovies.com</p>
+    </div>
+  </div>
+
+</main>
+
+
+
+
+
+{% endblock %}

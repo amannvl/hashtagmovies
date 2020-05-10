@@ -1,0 +1,157 @@
+{% extends 'hashtagmovies/basic.html' %}
+{% block title %} HashtagMovies {% endblock %}
+{% block head %}
+      <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
+
+{% endblock %}
+{% block css %}
+{% load static %}
+
+
+
+@media (min-width: 1024px)
+.chefs {
+    background-attachment: fixed;
+}
+
+.chefs {
+    background-size: cover;
+    padding: 60px 0;
+    position: relative;
+}
+
+.chefs .member .member-info {
+    position: absolute;
+    bottom: -80px;
+    left: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 20px 0;
+    color: #433f39;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.chefs .member .pic {
+    overflow: hidden;
+}
+.chefs .member h4::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #ffcf88;
+<!--    bottom: 0;-->
+ align-item: center;
+    left: calc(50% - 25px);
+}
+.chefs .member {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    background: #000;
+}
+body {
+    font-family: Sofia;
+    color: #444444;
+}
+.chefs .container {
+    position: relative;
+    z-index: 10;
+font-style: italic;
+  font-family: Sofia;
+}
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: Sofia;
+    color:#444444;
+}
+
+
+.chefs::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+<!--    background: #444444;-->
+    z-index: 9;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+
+
+
+ {% endblock %}
+
+{% block search %}
+<div class="container">
+          <nav class="navbar navbar-dark py-1 mb-2" style="background-color: #333;">
+              <a class="navbar-brand"><h3>Search Over Million</h3></a>
+  <form method="get" action="/search" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" id="query" name="query" aria-label="Search">
+    <button class="btn btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+      </div>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+
+
+<div class="container">
+
+<hr class="featurette-divider" style="background-color: #8b0000;">
+</div>
+<section style="background:#ccc;">
+      <div class="section-title" style="padding:30px;">
+          <h1>Recently Added <span>Movies</span></h1>
+<!--          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>-->
+        </div>
+
+</section>
+
+<section id="chefs" class="chefs">
+      <div class="container">
+
+<!--        <div class="section-title">-->
+<!--          <h2>Recently Added <span>Movies</span></h2>-->
+<!--&lt;!&ndash;          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>&ndash;&gt;-->
+<!--        </div>-->
+
+        <div class="row my-4">
+        {% for i in posts %}
+            {% if i.full_size_cover_url %}
+          <div class="col-lg-4 col-md-6 my-4">
+            <div class="member">
+              <div class="pic"><img src="{{ i.full_size_cover_url }}" width="350px" height="450px"  alt="{{ i.title }}"></div>
+              <div class="member-info">
+                  <a href="/moviepost/{{i.movie_id}}" style="color:#444444;"><h4>{{ i.title }}</h4></a>
+                <span>{{ i.genres }}</span>
+              </div>
+            </div>
+          </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+{% endblock %}
